@@ -1,0 +1,34 @@
+﻿<Window x:Class="DBSnap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBSnap"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000">
+    <Grid Margin="0,0,0,0">
+        <ComboBox Name="Com_box" SelectedIndex="0" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Width="100">
+            <ComboBoxItem>SqlServer</ComboBoxItem>
+            <ComboBoxItem>Mysql</ComboBoxItem>
+            <ComboBoxItem>Oracle</ComboBoxItem>
+            <ComboBoxItem>PostgreSql</ComboBoxItem>
+            <ComboBoxItem>SqlLite</ComboBoxItem>
+        </ComboBox>
+        <Button Content="测试连接" HorizontalAlignment="Left" Margin="759,16,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Conn"/>
+        <Label Content="连接字符串:" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txt_Str" HorizontalAlignment="Left" Height="23" Margin="203,16,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="542"/>
+        <Button IsEnabled="False" Name="btn_search" Click="Search_Click" Content="查询" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="873,59,0,0" Height="24"/>
+        <TextBox Name="Txt_sql" HorizontalAlignment="Left" Height="24" Margin="304,60,0,0" TextWrapping="Wrap" Text="sql " VerticalAlignment="Top" Width="530"/>
+        <Button IsEnabled="False" Name="btn_first" Content="第一次" HorizontalAlignment="Left" Margin="230,99,0,0" VerticalAlignment="Top" Width="60" Height="25" Click="Button_Click_1"/>
+        <Button IsEnabled="False" Name="btn_second" Content="第二次" HorizontalAlignment="Left" Margin="230,150,0,0" VerticalAlignment="Top" Width="60" Height="25" Click="Button_Click_2"/>
+        <Button IsEnabled="False" Name="btn_compare" Content="对比" HorizontalAlignment="Left" Margin="230,199,0,0" VerticalAlignment="Top" Width="60" Height="24" Click="Button_Compare"/>
+        <Button Content="刷新" HorizontalAlignment="Left" Margin="873,16,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Refresh"/>
+        <!--<TextBox Name="Txt_Tables" HorizontalAlignment="Left" Height="341" Margin="30,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="185"/>-->
+        <ListBox Name="ListBox_Tables" HorizontalAlignment="Left" Height="415" VerticalAlignment="Top" Width="196" Margin="20,74,0,0"/>
+        <Label Content="Table Name:" HorizontalAlignment="Left" Margin="20,46,0,0" VerticalAlignment="Top" Width="87">
+        </Label>
+        <DataGrid Name="Dg_Table" Visibility="Collapsed" HorizontalAlignment="Left" Height="100" Width="60" Margin="230,276,0,0" VerticalAlignment="Top" />
+        <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Name="Result" HorizontalAlignment="Left" Height="390" Margin="304,99,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="644">
+        </TextBox>
+    </Grid>
+</Window>
