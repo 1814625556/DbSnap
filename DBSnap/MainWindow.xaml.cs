@@ -313,5 +313,23 @@ namespace DBSnap
             this.Result.Visibility = Visibility.Collapsed;
         }
         #endregion
+        /// <summary>
+        /// 根据指定字段搜索全库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void Search_ClickAll(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.Txt_sql.Text) || Dt1 == null) return;
+            for(int i = 0; i < Dt1.Tables.Count; i++)
+            {
+                var result = CompareHelper.SearchAll(Dt1.Tables[i], this.Txt_sql.Text);
+                if (result != "")
+                {
+                    this.Result.Text += $"{result} \r\n";
+                }
+            }
+        }
     }
 }

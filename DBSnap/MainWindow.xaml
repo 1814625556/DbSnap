@@ -17,8 +17,9 @@
         <Button Content="测试连接" HorizontalAlignment="Left" Margin="759,16,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Conn"/>
         <Label Content="连接字符串:" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_Str" HorizontalAlignment="Left" Height="23" Margin="203,16,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="542"/>
-        <Button IsEnabled="False" Name="btn_search" Click="Search_Click" Content="查询" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="873,59,0,0" Height="24"/>
-        <TextBox Name="Txt_sql" HorizontalAlignment="Left" Height="24" Margin="304,60,0,0" TextWrapping="Wrap" Text="sql " VerticalAlignment="Top" Width="530"/>
+        <Button IsEnabled="False" Name="btn_search" Click="Search_Click" Content="查询" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="787,58,0,0" Height="24"/>
+        <Button IsEnabled="True" Name="btn_searchall" Click="Search_ClickAll" Content="查询all" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="873,58,0,0" Height="24"/>
+        <TextBox Name="Txt_sql" HorizontalAlignment="Left" Height="24" Margin="230,58,0,0" TextWrapping="Wrap" Text="sql " VerticalAlignment="Top" Width="530"/>
         <Button IsEnabled="False" Name="btn_first" Content="第一次" HorizontalAlignment="Left" Margin="230,99,0,0" VerticalAlignment="Top" Width="60" Height="25" Click="Button_Click_1"/>
         <Button IsEnabled="False" Name="btn_second" Content="第二次" HorizontalAlignment="Left" Margin="230,150,0,0" VerticalAlignment="Top" Width="60" Height="25" Click="Button_Click_2"/>
         <Button IsEnabled="False" Name="btn_compare" Content="对比" HorizontalAlignment="Left" Margin="230,199,0,0" VerticalAlignment="Top" Width="60" Height="24" Click="Button_Compare"/>

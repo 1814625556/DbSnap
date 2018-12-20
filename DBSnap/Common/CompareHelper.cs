@@ -78,5 +78,27 @@ namespace DBSnap.Common
             }
             return listdt;
         }
+
+        /// <summary>
+        /// 查找表中是否存在自定值
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="searchStr"></param>
+        /// <returns></returns>
+        public static string SearchAll(DataTable dt, string searchStr)
+        {
+            var result = "";
+            foreach (DataRow dr in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    if (dr[dc].ToString().Contains(searchStr))
+                    {
+                        result = $"TableName:{dt.TableName},ColumnName:{dc.ColumnName}";
+                    }
+                }
+            }
+            return result;
+        }
     }
 }
