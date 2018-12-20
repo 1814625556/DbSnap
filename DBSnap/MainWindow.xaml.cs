@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Linq;
 using System.Windows;
+using MySql.Data.MySqlClient;
 
 namespace DBSnap
 {
@@ -55,7 +56,9 @@ namespace DBSnap
                             TableList = dbHelper.SqlServerHelper.GetTabelNameList(con);
                         break;
                     case 1:
-                        break;
+                        using (MySqlConnection con = dbHelper.MysqlHelper.GetConnection(Connsql))
+                            TableList = dbHelper.MysqlHelper.GetTabelNameList(con);
+                            break;
                     case 2:
                         using (OracleConnection Oraclcon = dbHelper.OracleHelper.GetConnection(Connsql))
                             TableList = dbHelper.OracleHelper.GetTabelNameList(Oraclcon);
@@ -96,6 +99,8 @@ namespace DBSnap
                             Dt1 = dbHelper.SqlServerHelper.GetDataSetByTables(conn, TableList);
                         break;
                     case 1:
+                        using (MySqlConnection conn = dbHelper.MysqlHelper.GetConnection(Connsql))
+                            Dt1 = dbHelper.MysqlHelper.GetDataSetByTables(conn, TableList);
                         break;
                     case 2:
                         using (OracleConnection orconn = dbHelper.OracleHelper.GetConnection(Connsql))
@@ -129,6 +134,8 @@ namespace DBSnap
                             Dt2 = dbHelper.SqlServerHelper.GetDataSetByTables(conn, TableList);
                         break;
                     case 1://mysql
+                        using (MySqlConnection conn = dbHelper.MysqlHelper.GetConnection(Connsql))
+                            Dt2 = dbHelper.MysqlHelper.GetDataSetByTables(conn, TableList);
                         break;
                     case 2://oracle
                         using (OracleConnection orconn = dbHelper.OracleHelper.GetConnection(Connsql))
@@ -231,6 +238,8 @@ namespace DBSnap
                                 dt = dbHelper.SqlServerHelper.GetDataTable(sqlStr, conn);
                             break;
                         case 1:
+                            using (MySqlConnection conn = new MySqlConnection(Connsql))
+                                dt = dbHelper.MysqlHelper.GetDataTable(sqlStr, conn);
                             break;
                         case 2:
                             using (OracleConnection conn = new OracleConnection(Connsql))
